@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Your Body in 90 Days | FitLife Pro</title>
+    <meta name="description" content="Join thousands who've transformed their bodies. Get your personalized fitness plan today!">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">FitLife Pro</div>
+            <div class="nav-cta">
+                <button class="btn-secondary" onclick="scrollToForm()">Start Free Trial</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Transform Your Body in <span class="highlight">90 Days</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Join over 50,000+ people who've achieved their dream physique. 
+                        Get a personalized workout & nutrition plan designed just for you.
+                    </p>
+                    <ul class="hero-benefits">
+                        <li>✅ Custom workout plans</li>
+                        <li>✅ Meal prep guides</li>
+                        <li>✅ 1-on-1 coaching support</li>
+                        <li>✅ Track your progress</li>
+                    </ul>
+                    <div class="social-proof">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">4.9/5 from 12,000+ reviews</span>
+                    </div>
+                </div>
+                <div class="hero-form-container">
+                    <div class="form-card">
+                        <h2 class="form-title">Start Your Transformation Today</h2>
+                        <p class="form-subtitle">Get instant access to your free fitness plan</p>
+                        
+                        <form id="leadForm" class="lead-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    placeholder="John Doe" 
+                                    required
+                                    autocomplete="name"
+                                >
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    placeholder="john@example.com" 
+                                    required
+                                    autocomplete="email"
+                                >
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    placeholder="(555) 123-4567" 
+                                    required
+                                    autocomplete="tel"
+                                >
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary" id="submitBtn">
+                                <span class="btn-text">Get My Free Plan</span>
+                                <span class="btn-loader" id="btnLoader">⏳</span>
+                            </button>
+                            
+                            <p class="form-footer">
+                                🔒 We respect your privacy. No spam, ever.
+                            </p>
+                        </form>
+                        
+                        <!-- Success Message -->
+                        <div class="success-message" id="successMessage">
+                            <div class="success-icon">✓</div>
+                            <h3>Success! Check your email</h3>
+                            <p>We've sent your free fitness plan to your inbox.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Thousands Choose FitLife Pro</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Custom Workout Plans</h3>
+                    <p>Personalized routines based on your fitness level and goals</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥗</div>
+                    <h3>Nutrition Made Easy</h3>
+                    <p>Simple meal plans with shopping lists and prep guides</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Track Your Progress</h3>
+                    <p>Monitor your transformation with our easy-to-use app</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Expert Coaching</h3>
+                    <p>Get guidance from certified fitness professionals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Real Results from Real People</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <p>"I lost 30 pounds in 90 days! The personalized plan made all the difference."</p>
+                        <div class="testimonial-author">
+                            <strong>Sarah M.</strong>
+                            <span>Lost 30 lbs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <p>"Finally found a program that fits my busy schedule. The meal prep guides are a game-changer!"</p>
+                        <div class="testimonial-author">
+                            <strong>Michael T.</strong>
+                            <span>Gained 20 lbs muscle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">★★★★★</div>
+                        <p>"The best investment I've made in myself. The coaching support kept me motivated every step."</p>
+                        <div class="testimonial-author">
+                            <strong>Emma L.</strong>
+                            <span>Completed 90-day challenge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Start Your Transformation?</h2>
+            <p>Join thousands achieving their fitness goals today</p>
+            <button class="btn-primary btn-large" onclick="scrollToForm()">Get Started Free</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 FitLife Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
