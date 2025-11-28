@@ -1,5 +1,5 @@
-// Webhook Configuration
-const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/25508349/ukb0ebq/'; 
+// Webhook URL is loaded from config.js
+// Make sure config.js is loaded before this script in index.html 
 
 // Form Elements
 const form = document.getElementById('leadForm');
@@ -180,7 +180,7 @@ form.addEventListener('submit', async function(e) {
         formBody.append('source', formData.source);
         formBody.append('campaign', formData.campaign);
         
-        const response = await fetch(WEBHOOK_URL, {
+        const response = await fetch(CONFIG.WEBHOOK_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -254,4 +254,4 @@ function showSuccessMessage() {
 
 // Console log for testing
 console.log('Lead Capture Form Loaded');
-console.log('Webhook URL:', WEBHOOK_URL);
+console.log('Webhook URL:', CONFIG.WEBHOOK_URL);

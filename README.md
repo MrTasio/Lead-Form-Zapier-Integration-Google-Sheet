@@ -24,11 +24,21 @@ cd Lead-Form
 
 ### 2. Configure Webhook
 
-Open `script.js` and update the webhook URL:
+Copy the example config file and update it with your webhook URL:
+
+```bash
+cp config.example.js config.js
+```
+
+Then edit `config.js` and update the webhook URL:
 
 ```javascript
-const WEBHOOK_URL = 'https://your-webhook-url-here';
+const CONFIG = {
+    WEBHOOK_URL: 'https://your-webhook-url-here'
+};
 ```
+
+**Note:** `config.js` is gitignored by default to keep your webhook URL private.
 
 **Webhook Options:**
 - **Zapier**: Create a webhook in Zapier and paste the URL
@@ -57,10 +67,13 @@ Then visit: `http://localhost:8000`
 
 ```
 Lead-Form/
-├── index.html      # Main HTML structure
-├── styles.css      # Styling and responsive design
-├── script.js       # Form validation and webhook integration
-└── README.md       # This file
+├── index.html          # Main HTML structure
+├── styles.css          # Styling and responsive design
+├── script.js           # Form validation and webhook integration
+├── config.example.js   # Example config file (copy to config.js)
+├── config.js           # Your webhook configuration (gitignored)
+├── .gitignore          # Git ignore file
+└── README.md           # This file
 ```
 
 ## 🔧 Configuration
@@ -79,7 +92,7 @@ Lead-Form/
    - Paste into `script.js`
 
 3. **Custom Webhook**:
-   - Replace `WEBHOOK_URL` in `script.js` with your endpoint
+   - Update `WEBHOOK_URL` in `config.js` with your endpoint
    - Ensure your endpoint accepts POST requests with form-encoded data
 
 ### Form Data Format
