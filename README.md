@@ -151,7 +151,7 @@ This project is open source and available for personal or commercial use.
 
 ## 👤 Author
 
-[Your Name]
+Sid Bercasio
 
 ---
 
