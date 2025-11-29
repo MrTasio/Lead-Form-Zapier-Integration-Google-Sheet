@@ -1,4 +1,7 @@
-# Config file with sensitive webhook URL
+# Environment variables
+.env
+
+# Config file (auto-generated)
 config.js
 
 # OS files

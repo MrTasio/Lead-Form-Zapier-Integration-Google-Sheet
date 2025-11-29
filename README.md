@@ -12,6 +12,7 @@ A high-converting fitness landing page with an integrated lead capture form that
 - 💫 **Smooth Animations** - Professional loading states and success messages
 - ♿ **Accessible** - Semantic HTML with proper labels and ARIA attributes
 - 📊 **Analytics Ready** - Includes metadata for tracking (source, campaign, timestamp)
+- 🔐 **Environment Variables** - Uses `.env` files and supports Vercel environment variables
 
 ## 🚀 Quick Start
 
@@ -22,23 +23,32 @@ git clone <your-repo-url>
 cd Lead-Form
 ```
 
-### 2. Configure Webhook
+### 2. Configure Webhook with Environment Variables
 
-Copy the example config file and update it with your webhook URL:
+Create a `.env` file in the root directory:
 
 ```bash
-cp config.example.js config.js
+# Copy the example file
+cp .env.example .env
+
+# Or create manually
+echo "WEBHOOK_URL=https://your-webhook-url-here" > .env
 ```
 
-Then edit `config.js` and update the webhook URL:
+Then edit `.env` and add your webhook URL:
 
-```javascript
-const CONFIG = {
-    WEBHOOK_URL: 'https://your-webhook-url-here'
-};
+```env
+WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/
 ```
 
-**Note:** `config.js` is gitignored by default to keep your webhook URL private.
+**Build the config from environment variable:**
+```bash
+npm run build
+```
+
+This will generate `config.js` from your `.env` file.
+
+**Note:** `.env` is gitignored by default to keep your webhook URL private.
 
 **Webhook Options:**
 - **Zapier**: Create a webhook in Zapier and paste the URL
@@ -47,21 +57,54 @@ const CONFIG = {
 
 ### 3. Run Locally
 
-**Option A: Python**
+**Option A: Using npm script (recommended)**
 ```bash
+npm run build  # Build config from .env
+npm run dev    # Starts server on port 8000
+```
+
+**Option B: Manual build + Python**
+```bash
+npm run build
 python -m http.server 8000
 ```
 
-**Option B: Node.js**
-```bash
-npx http-server -p 8000
-```
-
 **Option C: VS Code Live Server**
+- First run: `npm run build`
 - Install "Live Server" extension
 - Right-click `index.html` → "Open with Live Server"
 
 Then visit: `http://localhost:8000`
+
+## 🌐 Deploy to Vercel
+
+### Using Vercel Dashboard
+
+1. Push your code to GitHub
+2. Import project in Vercel
+3. Go to **Settings** → **Environment Variables**
+4. Add new variable:
+   - **Key**: `WEBHOOK_URL`
+   - **Value**: Your webhook URL
+   - **Environment**: Production, Preview, Development (check all)
+5. Deploy your project
+
+Vercel will automatically run `npm run build` during deployment, which generates `config.js` from the environment variable.
+
+### Using Vercel CLI
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Login and set environment variable
+vercel env add WEBHOOK_URL
+
+# Deploy
+vercel --prod
+```
+
+See `SETUP.md` for detailed deployment instructions.
 
 ## 📁 File Structure
 
@@ -70,9 +113,14 @@ Lead-Form/
 ├── index.html          # Main HTML structure
 ├── styles.css          # Styling and responsive design
 ├── script.js           # Form validation and webhook integration
-├── config.example.js   # Example config file (copy to config.js)
-├── config.js           # Your webhook configuration (gitignored)
+├── .env.example        # Example environment file (copy to .env)
+├── .env                # Your webhook URL (gitignored)
+├── config.js           # Auto-generated config file (gitignored)
+├── build-config.js     # Build script to generate config.js
+├── package.json        # Node.js dependencies and scripts
+├── vercel.json         # Vercel deployment configuration
 ├── .gitignore          # Git ignore file
+├── SETUP.md            # Detailed setup guide
 └── README.md           # This file
 ```
 
@@ -84,15 +132,16 @@ Lead-Form/
    - Create a new Zap
    - Choose "Webhooks by Zapier" → "Catch Hook"
    - Copy the webhook URL
-   - Paste into `script.js`
+   - Add to `.env` file: `WEBHOOK_URL=https://your-zapier-webhook-url`
 
 2. **webhook.site** (Testing):
    - Visit https://webhook.site
    - Copy your unique URL
-   - Paste into `script.js`
+   - Add to `.env` file
 
 3. **Custom Webhook**:
-   - Update `WEBHOOK_URL` in `config.js` with your endpoint
+   - Update `WEBHOOK_URL` in `.env` file with your endpoint
+   - Run `npm run build` to regenerate config.js
    - Ensure your endpoint accepts POST requests with form-encoded data
 
 ### Form Data Format
@@ -156,4 +205,3 @@ Sid Bercasio
 ---
 
 **Made with ❤️ for lead generation**
-
