@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview - Lead Capture Form Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2.5rem;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+        }
+
+        .section {
+            background: white;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #333;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 1rem;
+        }
+
+        .image-container p {
+            font-style: italic;
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        .workflow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+
+        .workflow-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .workflow-step-number {
+            width: 40px;
+            height: 40px;
+            background: #ff6b35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .workflow-arrow {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .feature-card h4 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .workflow {
+                flex-direction: column;
+            }
+
+            .workflow-arrow {
+                transform: rotate(90deg);
+            }
+
+            iframe {
+                height: 400px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Lead Capture Form Integration</h1>
+            <p>Complete Webhook-Based Lead Generation System</p>
+            <a href="index.html" class="cta-button">View Live Landing Page →</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Project Overview -->
+        <section class="section">
+            <h2>Project Overview</h2>
+            <p>
+                I've built a complete, high-converting fitness landing page with an integrated lead capture form that automatically 
+                sends lead data to Google Sheets via Zapier webhook integration. The system is production-ready, fully responsive, 
+                and optimized for maximum conversion rates.
+            </p>
+            
+            <div class="tech-stack">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript (ES6+)</span>
+                <span class="tech-badge">Zapier</span>
+                <span class="tech-badge">Google Sheets</span>
+                <span class="tech-badge">Webhook Integration</span>
+            </div>
+        </section>
+
+        <!-- What Was Built -->
+        <section class="section">
+            <h2>What Was Built</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>🎨 Landing Page</h4>
+                    <p>Modern, responsive fitness landing page with gradient hero section, social proof, testimonials, and multiple CTAs</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📝 Lead Capture Form</h4>
+                    <p>Professional form collecting name, email, and phone with real-time validation and auto-formatting</p>
+                </div>
+                <div class="feature-card">
+                    <h4>✅ Form Validation</h4>
+                    <p>Client-side validation with user-friendly error messages, phone number auto-formatting, and instant feedback</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔗 Webhook Integration</h4>
+                    <p>Seamless integration with Zapier webhook to automatically capture and process form submissions</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 Data Automation</h4>
+                    <p>Automatic data flow from form submission to Google Sheets for easy lead management</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💫 UX Features</h4>
+                    <p>Loading states, success messages, smooth animations, and error handling for professional user experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Landing Page Screenshot -->
+        <section class="section">
+            <h2>Landing Page Design</h2>
+            <p>
+                The landing page features a modern, high-converting design with a prominent lead capture form positioned 
+                above the fold for maximum visibility and conversion rates.
+            </p>
+            <div class="image-container">
+                <img src="images/leadform-above-fold.png" alt="Lead Form Landing Page Above the Fold">
+                <p>Landing page with lead capture form prominently displayed above the fold</p>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section">
+            <h2>How The Integration Works</h2>
+            <p>
+                The system follows a streamlined workflow that automatically captures leads and stores them in Google Sheets 
+                for easy management and follow-up.
+            </p>
+
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="workflow-step-number">1</div>
+                    <h3>User Fills Form</h3>
+                    <p>Visitor enters name, email, and phone on the landing page</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="workflow-step-number">2</div>
+                    <h3>Validation</h3>
+                    <p>Form validates input in real-time with instant feedback</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="workflow-step-number">3</div>
+                    <h3>Webhook Sends Data</h3>
+                    <p>Form data is sent via POST request to Zapier webhook</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="workflow-step-number">4</div>
+                    <h3>Zapier Processes</h3>
+                    <p>Zapier receives the data and triggers the automation</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="workflow-step-number">5</div>
+                    <h3>Google Sheets</h3>
+                    <p>Name, email, and phone are automatically saved to your Google Sheet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zapier Integration -->
+        <section class="section">
+            <h2>Zapier Webhook Configuration</h2>
+            <p>
+                The form is integrated with Zapier using a webhook endpoint. When a user submits the form, the data is 
+                automatically sent to Zapier where it can be processed and routed to various destinations, including 
+                Google Sheets, email notifications, CRM systems, and more.
+            </p>
+            <div class="image-container">
+                <img src="images/zapier catch data hook.png" alt="Zapier Webhook Catching Form Data">
+                <p>Zapier webhook receiving form submission data</p>
+            </div>
+            <h3>Technical Implementation:</h3>
+            <ul>
+                <li>Form data is sent as URL-encoded format to avoid CORS issues</li>
+                <li>All form fields (name, email, phone) plus metadata (timestamp, source, campaign) are sent to the webhook</li>
+                <li>Zapier is configured to map only name, email, and phone to Google Sheets</li>
+                <li>Error handling for network issues with user-friendly messages</li>
+                <li>Uses environment variables for secure webhook URL management</li>
+            </ul>
+            <p style="margin-top: 1rem; padding: 1rem; background: #fff3e0; border-left: 4px solid #ff6b35; border-radius: 4px;">
+                <strong>Configuration:</strong> The Zapier workflow is set up with field mapping to capture only the essential 
+                contact information (name, email, phone) in Google Sheets. Additional metadata sent to the webhook can be 
+                used for other automation actions if needed.
+            </p>
+        </section>
+
+        <!-- Google Sheets Integration -->
+        <section class="section">
+            <h2>Google Sheets Automation</h2>
+            <p>
+                All form submissions are automatically captured in a Google Sheet, providing you with a centralized database 
+                of all leads. The Zapier integration is configured to map and save the essential lead information: name, email, 
+                and phone number.
+            </p>
+            <div class="image-container">
+                <img src="images/google-sheet.png" alt="Google Sheets with Lead Data">
+                <p>Automated lead capture in Google Sheets</p>
+            </div>
+            
+            <h3>Live Google Sheet Viewer:</h3>
+            <p style="margin-bottom: 1rem;">
+                View the live Google Sheet where all form submissions are automatically saved. The sheet updates in real-time as new leads are captured.
+            </p>
+            <div style="margin: 2rem 0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); background: white;">
+                <iframe 
+                    src="https://docs.google.com/spreadsheets/d/1fK02GjFBXYN2Dv62HhJ6FinzErpeji9PaUoeOE9ImG8/preview?usp=sharing" 
+                    width="100%" 
+                    height="600" 
+                    style="border: none; display: block;"
+                    title="Google Sheets - Lead Data"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+                <div style="padding: 1rem; background: #f8f9fa; text-align: center; border-top: 1px solid #e5e7eb;">
+                    <a 
+                        href="https://docs.google.com/spreadsheets/d/1fK02GjFBXYN2Dv62HhJ6FinzErpeji9PaUoeOE9ImG8/edit?usp=sharing" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style="color: #667eea; text-decoration: none; font-weight: 600;"
+                    >
+                        Open in Google Sheets →
+                    </a>
+                </div>
+            </div>
+            <h3>Data Saved to Google Sheets:</h3>
+            <ul>
+                <li><strong>Name:</strong> Full name of the lead</li>
+                <li><strong>Email:</strong> Email address of the lead</li>
+                <li><strong>Phone:</strong> Phone number of the lead</li>
+            </ul>
+            <p style="margin-top: 1rem; padding: 1rem; background: #f0f7ff; border-left: 4px solid #667eea; border-radius: 4px;">
+                <strong>Note:</strong> The form also sends additional metadata (timestamp, source, campaign) to the webhook, 
+                which can be used for other Zapier actions if needed (email notifications, analytics, etc.). The Google Sheets 
+                integration is configured to capture only the essential contact information for lead management.
+            </p>
+        </section>
+
+        <!-- Key Features -->
+        <section class="section">
+            <h2>Key Features & Benefits</h2>
+            
+            <h3>For Your Business:</h3>
+            <ul>
+                <li>✅ <strong>Automated Lead Capture:</strong> No manual data entry needed - leads are captured automatically</li>
+                <li>✅ <strong>Centralized Database:</strong> All leads stored in Google Sheets for easy access and management</li>
+                <li>✅ <strong>Real-time Updates:</strong> New leads appear instantly in your Google Sheet</li>
+                <li>✅ <strong>Scalable Solution:</strong> Can handle unlimited form submissions</li>
+                <li>✅ <strong>Cost-Effective:</strong> No need for expensive CRM systems - Google Sheets is free</li>
+                <li>✅ <strong>Expandable:</strong> Easy to add more Zapier actions (email alerts, Slack notifications, etc.)</li>
+            </ul>
+
+            <h3>For Your Visitors:</h3>
+            <ul>
+                <li>✅ <strong>Fast & Responsive:</strong> Form loads quickly and works on all devices</li>
+                <li>✅ <strong>Real-time Validation:</strong> Instant feedback prevents submission errors</li>
+                <li>✅ <strong>Phone Auto-formatting:</strong> Phone numbers format automatically as they type</li>
+                <li>✅ <strong>Clear Error Messages:</strong> Users know exactly what needs to be fixed</li>
+                <li>✅ <strong>Success Confirmation:</strong> Clear feedback when submission is successful</li>
+                <li>✅ <strong>Mobile-Friendly:</strong> Perfect experience on phones and tablets</li>
+            </ul>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="section">
+            <h2>Technical Highlights</h2>
+            
+            <h3>Form Validation:</h3>
+            <ul>
+                <li>Name validation: Minimum 2 characters, letters/spaces/hyphens only</li>
+                <li>Email validation: Proper email format checking with regex</li>
+                <li>Phone validation: Supports US and international formats</li>
+                <li>Real-time validation on field blur for instant feedback</li>
+                <li>Visual error indicators with specific error messages</li>
+            </ul>
+
+            <h3>Webhook Implementation:</h3>
+            <ul>
+                <li>Uses Fetch API for asynchronous form submission</li>
+                <li>URL-encoded format to avoid CORS preflight issues</li>
+                <li>Error handling with user-friendly messages</li>
+                <li>Loading states during submission</li>
+                <li>Environment variable support for secure configuration</li>
+            </ul>
+
+            <h3>Code Quality:</h3>
+            <ul>
+                <li>Clean, semantic HTML5 structure</li>
+                <li>Modern CSS with custom properties and responsive design</li>
+                <li>Vanilla JavaScript (no framework dependencies)</li>
+                <li>Accessible markup with proper labels and ARIA attributes</li>
+                <li>Production-ready and deployment-ready code</li>
+            </ul>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+            <h2 style="border-bottom: 3px solid white; color: white;">Ready to See It in Action?</h2>
+            <p style="font-size: 1.2rem; margin: 2rem 0; color: white;">
+                View the live landing page and test the lead capture form yourself.
+            </p>
+            <a href="index.html" class="cta-button" style="background: #ff6b35;">Visit Landing Page →</a>
+        </section>
+    </div>
+
+    <footer style="background: #1a1a1a; color: white; text-align: center; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container">
+            <p>&copy; 2024 Lead Capture Form Integration. Built by Sid Bercasio.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

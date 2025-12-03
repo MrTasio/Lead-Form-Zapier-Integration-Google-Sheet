@@ -110,9 +110,14 @@ See `SETUP.md` for detailed deployment instructions.
 
 ```
 Lead-Form/
-├── index.html          # Main HTML structure
+├── index.html          # Main landing page
+├── overview.html       # Client overview/documentation page
 ├── styles.css          # Styling and responsive design
 ├── script.js           # Form validation and webhook integration
+├── images/             # Screenshots and documentation images
+│   ├── leadform-above-fold.png
+│   ├── zapier catch data hook.png
+│   └── google-sheet.png
 ├── .env.example        # Example environment file (copy to .env)
 ├── .env                # Your webhook URL (gitignored)
 ├── config.js           # Auto-generated config file (gitignored)
@@ -123,6 +128,16 @@ Lead-Form/
 ├── SETUP.md            # Detailed setup guide
 └── README.md           # This file
 ```
+
+## 📋 Client Overview Page
+
+An overview page (`overview.html`) is included for sharing with clients. It includes:
+- Project overview and explanation
+- Screenshots of the landing page, Zapier integration, and Google Sheets
+- Technical details and features
+- Link to the live landing page
+
+Access it at: `overview.html` or share the direct URL with clients.
 
 ## 🔧 Configuration
 
